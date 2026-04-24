@@ -14,6 +14,10 @@
   <style>
     /* 부드러운 스크롤 효과 */
     html { scroll-behavior: smooth; }
+    
+    /* 모달 애니메이션 */
+    .modal-enter { opacity: 0; transform: scale(0.9); }
+    .modal-enter-active { opacity: 1; transform: scale(1); transition: all 0.3s ease; }
   </style>
 </head>
 <body class="bg-slate-50 font-sans text-slate-900 min-h-screen">
@@ -216,8 +220,8 @@
 
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         <!-- Portfolio Item 1 -->
-        <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow border border-slate-100 flex flex-col">
-          <div class="h-48 bg-slate-200 flex items-center justify-center relative group cursor-pointer">
+        <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow border border-slate-100 flex flex-col group cursor-pointer" onclick="showModal('상세보기 페이지 준비 중입니다.')">
+          <div class="h-48 bg-slate-200 flex items-center justify-center relative overflow-hidden">
             <span class="text-slate-400 font-medium">[프로젝트 대표 이미지 1 등록란]</span>
             <div class="absolute inset-0 bg-blue-600/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
               <span class="text-white font-medium flex items-center gap-2">상세보기 <i data-lucide="arrow-right" class="w-4 h-4"></i></span>
@@ -234,8 +238,8 @@
         </div>
 
         <!-- Portfolio Item 2 -->
-        <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow border border-slate-100 flex flex-col">
-          <div class="h-48 bg-slate-200 flex items-center justify-center relative group cursor-pointer">
+        <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow border border-slate-100 flex flex-col group cursor-pointer" onclick="showModal('상세보기 페이지 준비 중입니다.')">
+          <div class="h-48 bg-slate-200 flex items-center justify-center relative overflow-hidden">
             <span class="text-slate-400 font-medium">[프로젝트 대표 이미지 2 등록란]</span>
             <div class="absolute inset-0 bg-blue-600/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
               <span class="text-white font-medium flex items-center gap-2">상세보기 <i data-lucide="arrow-right" class="w-4 h-4"></i></span>
@@ -252,8 +256,8 @@
         </div>
 
         <!-- Portfolio Item 3 -->
-        <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow border border-slate-100 flex flex-col">
-          <div class="h-48 bg-slate-200 flex items-center justify-center relative group cursor-pointer">
+        <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow border border-slate-100 flex flex-col group cursor-pointer" onclick="showModal('상세보기 페이지 준비 중입니다.')">
+          <div class="h-48 bg-slate-200 flex items-center justify-center relative overflow-hidden">
             <span class="text-slate-400 font-medium">[프로젝트 대표 이미지 3 등록란]</span>
             <div class="absolute inset-0 bg-blue-600/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
               <span class="text-white font-medium flex items-center gap-2">상세보기 <i data-lucide="arrow-right" class="w-4 h-4"></i></span>
@@ -271,7 +275,7 @@
       </div>
       
       <div class="text-center mt-12">
-        <button class="px-6 py-3 bg-white border-2 border-slate-200 hover:border-blue-500 hover:text-blue-600 text-slate-600 rounded-md font-medium transition-colors">
+        <button onclick="showModal('포트폴리오 게시판이 준비 중입니다.')" class="px-6 py-3 bg-white border-2 border-slate-200 hover:border-blue-500 hover:text-blue-600 text-slate-600 rounded-md font-medium transition-colors">
           포트폴리오 더보기
         </button>
       </div>
@@ -316,10 +320,39 @@
     </div>
   </footer>
 
+  <!-- 알림창 모달 (기본적으로 숨겨짐) -->
+  <div id="info-modal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm">
+    <div class="bg-white rounded-2xl shadow-2xl max-w-sm w-full p-8 text-center modal-enter-active">
+      <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
+        <i data-lucide="info" class="w-8 h-8"></i>
+      </div>
+      <h4 class="text-xl font-bold text-slate-900 mb-2">안내</h4>
+      <p id="modal-text" class="text-slate-500 mb-8 leading-relaxed"></p>
+      <button onclick="closeModal()" class="w-full py-3 bg-slate-900 text-white rounded-xl font-semibold hover:bg-slate-800 transition-colors">
+        확인
+      </button>
+    </div>
+  </div>
+
   <!-- 사이트 동작을 위한 자바스크립트 -->
   <script>
     // 현재 연도 표시
     document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    // 모달 제어 함수
+    function showModal(message) {
+      const modal = document.getElementById('info-modal');
+      const modalText = document.getElementById('modal-text');
+      modalText.textContent = message;
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden'; // 스크롤 방지
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('info-modal');
+      modal.classList.add('hidden');
+      document.body.style.overflow = 'auto'; // 스크롤 허용
+    }
 
     // 메뉴 이동 부드럽게
     function scrollToSection(sectionId) {
