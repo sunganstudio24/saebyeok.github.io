@@ -8,20 +8,20 @@
   <script src="https://unpkg.com/lucide@latest"></script>
   <style>
     html { scroll-behavior: smooth; }
+    body { word-break: keep-all; line-height: 1.9; }
+    h1, h2, h3, h4, h5 { word-break: keep-all; line-height: 1.4; }
+    p { word-break: keep-all; line-height: 1.9; }
     .modal-enter { opacity: 0; transform: scale(0.9); }
     .modal-enter-active { opacity: 1; transform: scale(1); transition: all 0.3s ease; }
   </style>
 </head>
 <body class="bg-slate-50 font-sans text-slate-900 min-h-screen">
- 
-  <!-- Navigation -->
+
   <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-transparent py-6">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center">
         <div class="flex items-center cursor-pointer" onclick="scrollToSection('home')">
-          <span id="logo-text" class="text-2xl font-bold tracking-tighter text-white transition-colors">
-            새벽<span class="text-blue-400">E&C</span>
-          </span>
+          <span id="logo-text" class="text-xl font-bold tracking-tight text-white transition-colors">새벽이앤씨</span>
         </div>
         <div class="hidden md:flex space-x-8">
           <button onclick="scrollToSection('home')" class="desktop-menu-btn text-sm font-medium uppercase tracking-wider transition-colors hover:text-blue-400 text-slate-200">Home</button>
@@ -49,8 +49,7 @@
       </div>
     </div>
   </nav>
- 
-  <!-- Hero Section -->
+
   <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
     <div class="absolute inset-0 z-0" style="background-image: url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=2070&auto=format&fit=crop'); background-position: center; background-size: cover; background-repeat: no-repeat;">
       <div class="absolute inset-0 bg-gradient-to-r from-slate-900/90 to-slate-900/50"></div>
@@ -59,13 +58,11 @@
       <span class="inline-block py-1 px-3 rounded-full bg-blue-500/20 text-blue-300 text-sm font-semibold tracking-wider mb-6 border border-blue-500/30 backdrop-blur-sm">
         농산어촌의 새로운 아침을 여는 든든한 파트너
       </span>
-      <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-6">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-8" style="line-height:1.35; word-break:keep-all;">
         농산어촌의 지속 가능한 내일을 <br class="hidden md:block"/>
-        <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-300">
-          새벽이앤씨
-        </span>가 함께합니다.
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-300">새벽이앤씨</span>가 함께합니다.
       </h1>
-      <p class="text-lg md:text-xl text-slate-300 mb-10 max-w-2xl font-light leading-relaxed">
+      <p class="text-base md:text-lg text-slate-300 mb-10 max-w-xl font-light" style="line-height:1.9; word-break:keep-all;">
         지역이 가진 고유한 가치를 발굴하고, 주민과 소통하며 실질적인 변화를 이끌어내는 전문 컨설팅 그룹입니다. 2008년 설립 이래 농촌마을 종합개발, 도시재생, 지역역량강화(S/W) 분야에서 박사급 전문가 그룹의 노하우로 최적의 솔루션을 제공합니다.
       </p>
       <div class="flex flex-col sm:flex-row gap-4">
@@ -79,15 +76,14 @@
       </div>
     </div>
   </section>
- 
-  <!-- CEO Message -->
+
   <section id="ceo" class="py-24 bg-slate-900 text-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid md:grid-cols-2 gap-16 items-center">
         <div>
           <span class="text-blue-400 text-sm font-bold uppercase tracking-widest mb-4 block">CEO Message</span>
-          <h2 class="text-3xl md:text-4xl font-bold mb-8 leading-tight">인사말</h2>
-          <div class="space-y-5 text-slate-300 leading-relaxed text-lg">
+          <h2 class="text-3xl md:text-4xl font-bold mb-8">인사말</h2>
+          <div class="space-y-6 text-slate-300 text-base" style="line-height:1.9; word-break:keep-all;">
             <p>"농산어촌의 새로운 아침을 여는 든든한 파트너, 새벽이앤씨가 함께하겠습니다."</p>
             <p>유한회사 새벽이앤씨는 2008년 설립 이래, 풍요로운 농산어촌의 미래와 지역 공동체의 지속 가능한 발전을 위해 끊임없이 달려왔습니다.</p>
             <p>우리는 지역이 가진 고유한 가치를 발굴하고, 주민과 소통하며, 실질적인 변화를 이끌어내는 전문 컨설팅 그룹입니다. 농촌마을 종합개발, 도시재생, 지역역량강화(S/W) 등 현장의 목소리에 귀 기울이며 쌓아온 풍부한 경험과 박사급 전문가 그룹의 노하우를 바탕으로 최적의 솔루션을 제공합니다.</p>
@@ -114,16 +110,13 @@
       </div>
     </div>
   </section>
- 
-  <!-- Vision & Mission -->
+
   <section id="vision" class="py-24 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16">
         <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Vision & Mission</h2>
         <div class="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
-        <p class="text-slate-500 max-w-2xl mx-auto text-lg">
-          새벽이앤씨가 추구하는 핵심 가치와 미래상을 소개합니다.
-        </p>
+        <p class="text-slate-500 max-w-2xl mx-auto text-lg">새벽이앤씨가 추구하는 핵심 가치와 미래상을 소개합니다.</p>
       </div>
       <div class="grid md:grid-cols-2 gap-12">
         <div class="bg-slate-50 p-10 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
@@ -135,9 +128,7 @@
           </div>
           <h3 class="text-2xl font-bold text-slate-900 mb-4">Our Vision</h3>
           <h4 class="text-lg font-semibold text-blue-600 mb-4">농산어촌 지역 발전을 선도하는 No.1 전문 컨설팅 그룹</h4>
-          <p class="text-slate-600 leading-relaxed relative z-10">
-            지역이 가진 고유한 잠재력을 발굴하고 주민 참여를 기반으로 한 지속 가능한 발전 모델을 구현합니다. 박사 7명, 석사 4명의 다학제적 전문가 그룹이 현장 중심의 실천적 솔루션으로 농산어촌의 새로운 아침을 만들어갑니다.
-          </p>
+          <p class="text-slate-600 relative z-10">지역이 가진 고유한 잠재력을 발굴하고 주민 참여를 기반으로 한 지속 가능한 발전 모델을 구현합니다. 박사 7명, 석사 4명의 다학제적 전문가 그룹이 현장 중심의 실천적 솔루션으로 농산어촌의 새로운 아침을 만들어갑니다.</p>
         </div>
         <div class="bg-slate-50 p-10 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
           <div class="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity transform group-hover:scale-110 duration-500">
@@ -148,15 +139,12 @@
           </div>
           <h3 class="text-2xl font-bold text-slate-900 mb-4">Our Mission</h3>
           <h4 class="text-lg font-semibold text-teal-600 mb-4">주민의 삶에 활력을, 지역 사회에 실질적 변화를</h4>
-          <p class="text-slate-600 leading-relaxed relative z-10">
-            단순한 컨설팅을 넘어 지역민의 목소리에 귀 기울이며, 농촌마을 종합개발부터 도시재생, 경영컨설팅까지 현장에서 검증된 방법론으로 내일이 더 기대되는 지역 사회를 만들어갑니다.
-          </p>
+          <p class="text-slate-600 relative z-10">단순한 컨설팅을 넘어 지역민의 목소리에 귀 기울이며, 농촌마을 종합개발부터 도시재생, 경영컨설팅까지 현장에서 검증된 방법론으로 내일이 더 기대되는 지역 사회를 만들어갑니다.</p>
         </div>
       </div>
     </div>
   </section>
- 
-  <!-- Services -->
+
   <section id="services" class="py-24 bg-slate-900 text-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
@@ -170,9 +158,7 @@
         <div class="bg-slate-800 p-8 rounded-xl border border-slate-700 hover:border-blue-500 transition-colors group">
           <i data-lucide="map-pin" class="text-blue-400 w-10 h-10 mb-6"></i>
           <h3 class="text-xl font-bold mb-3 group-hover:text-blue-400 transition-colors">농산어촌 개발 및 마을만들기</h3>
-          <p class="text-slate-400 text-sm leading-relaxed mb-6">
-            농촌마을 종합개발사업 예비·기본계획 수립부터 어촌뉴딜 300까지, 지역의 하드웨어와 소프트웨어를 잇는 통합 컨설팅을 수행합니다.
-          </p>
+          <p class="text-slate-400 text-sm mb-6">농촌마을 종합개발사업 예비·기본계획 수립부터 어촌뉴딜 300까지, 지역의 하드웨어와 소프트웨어를 잇는 통합 컨설팅을 수행합니다.</p>
           <ul class="text-slate-300 text-sm space-y-2 border-t border-slate-700 pt-4">
             <li class="flex items-center gap-2"><i data-lucide="chevron-right" class="text-blue-500 w-4 h-4"></i> 농촌마을 종합개발사업 계획 수립</li>
             <li class="flex items-center gap-2"><i data-lucide="chevron-right" class="text-blue-500 w-4 h-4"></i> 창조적 마을만들기 컨설팅</li>
@@ -182,9 +168,7 @@
         <div class="bg-slate-800 p-8 rounded-xl border border-slate-700 hover:border-teal-500 transition-colors group">
           <i data-lucide="users" class="text-teal-400 w-10 h-10 mb-6"></i>
           <h3 class="text-xl font-bold mb-3 group-hover:text-teal-400 transition-colors">지역역량강화(S/W) 및 교육</h3>
-          <p class="text-slate-400 text-sm leading-relaxed mb-6">
-            주민 참여형 상향식 역량강화 용역 수행, 농촌 특화 교육 프로그램 개발, 휴먼케어 프로그램 운영으로 지역 공동체의 내발적 성장을 지원합니다.
-          </p>
+          <p class="text-slate-400 text-sm mb-6">주민 참여형 상향식 역량강화 용역 수행, 농촌 특화 교육 프로그램 개발, 휴먼케어 프로그램 운영으로 지역 공동체의 내발적 성장을 지원합니다.</p>
           <ul class="text-slate-300 text-sm space-y-2 border-t border-slate-700 pt-4">
             <li class="flex items-center gap-2"><i data-lucide="chevron-right" class="text-teal-500 w-4 h-4"></i> 주민 참여형 지역역량강화 용역</li>
             <li class="flex items-center gap-2"><i data-lucide="chevron-right" class="text-teal-500 w-4 h-4"></i> 농촌 리더 교육 프로그램 개발</li>
@@ -194,9 +178,7 @@
         <div class="bg-slate-800 p-8 rounded-xl border border-slate-700 hover:border-purple-500 transition-colors group">
           <i data-lucide="briefcase" class="text-purple-400 w-10 h-10 mb-6"></i>
           <h3 class="text-xl font-bold mb-3 group-hover:text-purple-400 transition-colors">경영 컨설팅 및 도시재생</h3>
-          <p class="text-slate-400 text-sm leading-relaxed mb-6">
-            중소기업·농어업 경영 컨설팅, 사회적기업 및 마을관리협동조합 설립·운영, 도시재생 뉴딜사업 역량강화 및 활성화 계획을 수립합니다.
-          </p>
+          <p class="text-slate-400 text-sm mb-6">중소기업·농어업 경영 컨설팅, 사회적기업 및 마을관리협동조합 설립·운영, 도시재생 뉴딜사업 역량강화 및 활성화 계획을 수립합니다.</p>
           <ul class="text-slate-300 text-sm space-y-2 border-t border-slate-700 pt-4">
             <li class="flex items-center gap-2"><i data-lucide="chevron-right" class="text-purple-500 w-4 h-4"></i> 중소기업 및 농어업 경영 컨설팅</li>
             <li class="flex items-center gap-2"><i data-lucide="chevron-right" class="text-purple-500 w-4 h-4"></i> 사회적기업·마을관리협동조합 설립 컨설팅</li>
@@ -206,8 +188,7 @@
       </div>
     </div>
   </section>
- 
-  <!-- History -->
+
   <section id="history" class="py-24 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16">
@@ -278,8 +259,7 @@
       </div>
     </div>
   </section>
- 
-  <!-- Portfolio -->
+
   <section id="portfolio" class="py-24 bg-slate-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16">
@@ -338,13 +318,12 @@
       </div>
     </div>
   </section>
- 
-  <!-- Footer -->
+
   <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid md:grid-cols-3 gap-8 mb-8">
         <div>
-          <h5 class="text-white text-xl font-bold mb-4">새벽E&C</h5>
+          <h5 class="text-white text-xl font-bold mb-4">새벽이앤씨</h5>
           <p class="text-sm leading-relaxed">2008년 설립 이래 농산어촌 지역 발전과 지역 공동체의 지속 가능한 성장을 위해 달려온 전문 컨설팅 그룹입니다.</p>
         </div>
         <div>
@@ -352,7 +331,7 @@
           <ul class="text-sm space-y-2">
             <li><strong class="text-slate-300">Address:</strong> 경상남도 진주시 대신로244번길 8, 1층 102호 (상대동)</li>
             <li><strong class="text-slate-300">Tel:</strong> 055-742-4201</li>
-            <li><strong class="text-slate-300">Email:</strong> saebyeokenc@naver.com</li>
+            <li><strong class="text-slate-300">Email:</strong> 7594202@naver.com</li>
           </ul>
         </div>
         <div>
@@ -376,8 +355,7 @@
       </div>
     </div>
   </footer>
- 
-  <!-- 모달 -->
+
   <div id="info-modal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm">
     <div class="bg-white rounded-2xl shadow-2xl max-w-sm w-full p-8 text-center modal-enter-active">
       <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
@@ -388,10 +366,9 @@
       <button onclick="closeModal()" class="w-full py-3 bg-slate-900 text-white rounded-xl font-semibold hover:bg-slate-800 transition-colors">확인</button>
     </div>
   </div>
- 
+
   <script>
     document.getElementById('current-year').textContent = new Date().getFullYear();
- 
     function showModal(message) {
       document.getElementById('modal-text').textContent = message;
       document.getElementById('info-modal').classList.remove('hidden');
@@ -401,7 +378,6 @@
       document.getElementById('info-modal').classList.add('hidden');
       document.body.style.overflow = 'auto';
     }
- 
     function scrollToSection(sectionId) {
       document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
       document.getElementById('mobile-menu-panel').classList.add('hidden');
@@ -409,11 +385,9 @@
       document.getElementById('mobile-icon').setAttribute('data-lucide', 'menu');
       lucide.createIcons();
     }
- 
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenuPanel = document.getElementById('mobile-menu-panel');
     let isMenuOpen = false;
- 
     mobileMenuBtn.addEventListener('click', () => {
       isMenuOpen = !isMenuOpen;
       if(isMenuOpen) {
@@ -425,7 +399,6 @@
       }
       lucide.createIcons();
     });
- 
     window.addEventListener('scroll', () => {
       const nav = document.getElementById('navbar');
       const logoText = document.getElementById('logo-text');
@@ -447,7 +420,6 @@
         desktopBtns.forEach(btn => btn.classList.replace('text-slate-600', 'text-slate-200'));
       }
     });
- 
     lucide.createIcons();
   </script>
 </body>
